@@ -13,7 +13,7 @@ datosCtrl.getInformation = (req, res) => {
 
 datosCtrl.createData = (req, res) => {
    const { concepto, monto, fecha, tipo } = req.body
-   DB.query("INSERT INTO finance (concepto, monto,fecha,tipo) VALUES (?,?,?,?)", [concepto, monto, fecha, tipo], (err, result) => {
+   DB.query("INSERT INTO finance (concepto, monto, fecha, tipo) VALUES (?,?,?,?)", [concepto, monto, fecha, tipo], (err, result) => {
       if (err) throw err
       res.json({ msg: 'Nuevo Dato Creado', concepto, monto, fecha, tipo })
    })

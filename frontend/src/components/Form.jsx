@@ -9,7 +9,7 @@ const Form = ({ createData }) => {
       tipo: "gastos"
    })
 
-   console.log("render", state)
+
    const submit = (e) => {
       e.preventDefault()
       createData(state)
@@ -18,14 +18,13 @@ const Form = ({ createData }) => {
    }
 
    const handleCheckBox = (e) => {
-      console.log(e.target.value)
 
       if (state.tipo === "gastos") {
          setState({ ...state, tipo: "entrado" })
       } else {
          setState({ ...state, tipo: "gastos" })
       }
-      console.log("handle", state)
+
    }
 
 

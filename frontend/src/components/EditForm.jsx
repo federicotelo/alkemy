@@ -2,14 +2,12 @@ import React, { useState } from 'react'
 import axios from 'axios';
 
 const EditForm = ({ state2, getData }) => {
-   console.log("stLimpio", state2)
 
    const [state, setState] = useState(...state2)
-   console.log("stspread", state)
 
    const submit = async (e) => {
       e.preventDefault()
-      await axios.patch(`http://localhost:8080/api/datos/${state.id}`, {
+      await axios.put(`http://localhost:8080/api/datos/${state.id}`, {
          concepto: state.concepto,
          monto: state.monto,
          fecha: state.fecha,
@@ -45,13 +43,6 @@ const EditForm = ({ state2, getData }) => {
                defaultValue={state2[0].monto}
                required
             />
-            {/* <input
-            type="number"
-            placeholder="Ingrese Valor"
-            className="form-control form-control-sm mb-2"
-            onChange={console.log("hola")}
-            required
-         /> */}
 
             <div className=" d-flex justify-content-around">
                <button className="btn btn-warning btn-sm mt-1" onClick={getData}>Cancelar</button>

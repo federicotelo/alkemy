@@ -27,6 +27,12 @@ DB.connect(function (err) {
       console.log("Table 'Finance' Created !!");
    });
 
+   DB.query(`CREATE TABLE IF NOT EXISTS users(id INT(11) NOT NULL AUTO_INCREMENT, 
+      email VARCHAR(50) UNIQUE KEY, pass VARCHAR(20), PRIMARY KEY (id))`, (err, result) => {
+      if (err) throw err;
+      console.log("Table 'User' Created too !!");
+   });
+
 });
 
 module.exports = {
