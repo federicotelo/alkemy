@@ -1,2 +1,2 @@
 # Aprendiendo github
-## biernvenido
+## bienvenido usuario
